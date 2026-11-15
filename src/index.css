@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  /* Editorial palette */
+  --color-cream: #faf7f5; /* Warm Alabaster Silk — primary background */
+  --color-blush: #f4e7e1; /* Soft Blush / Peach Tint — surface / secondary */
+  --color-ink: #181514; /* Deep Charcoal — text & sharp 1px borders */
+  --color-night: #121110; /* Deep charcoal / near-black — high-contrast sections */
+  --color-terracotta: #c87d6b; /* Terracotta Peach / Dusty Rose — beauty & jewelry */
+  --color-slate: #2c3034; /* Slate Grey — tech / phone accessories */
+  --color-champagne: #b89f7d; /* Champagne Gold — tech accents */
+  --color-brass: #c5a059; /* Antique Brass / Gold — barbershop accent */
+  --color-coal: #0d0d0d; /* Deep black — barbershop background */
+
+  /* Editorial typography */
+  --font-serif: "Fraunces Variable", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Sharp, offset "editorial" hard shadow (no blur) */
+  --shadow-editorial: 4px 4px 0 0 #181514;
+
+  /* Motion */
+  --animate-fade-up: fade-up 0.7s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  /* STRICT rule: no rounded corners anywhere in the project. */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-radius: 0 !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  section[id] {
+    scroll-margin-top: 64px;
+  }
+
+  ::selection {
+    background-color: var(--color-terracotta);
+    color: #ffffff;
+  }
+}
