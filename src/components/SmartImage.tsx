@@ -9,14 +9,27 @@ interface SmartImageProps {
   imgClassName?: string;
   /** Monogram shown if the image fails to load. */
   letter?: string;
+  /** Optional fallback image URL tried before the gradient monogram. */
+  fallbackSrc?: string;
 }
 
 /**
- * Stock photo component with a graceful gradient + monogram fallback so the
- * demo never shows a broken image if a remote URL is unavailable.
+ * Stock photo component with two layers of resilience:
+ *  1. An optional fallback image URL (tried once on error), then
+ *  2. A graceful gradient + monogram block so no broken image ever shows.
  */
-export default function SmartImage({ src, alt, className = "", imgClassName = "", letter }: SmartImageProps) {
+export default function SmartImage({
+  src,
+  alt,
+  className = "",
+  imgClassName = "",
+  letter,
+  fallbackSrc,
+}: SmartImageProps) {
+  const [usingFallback, setUsingFallback] = useState(false);
   const [failed, setFailed] = useState(false);
+
+  const currentSrc = usingFallback && fallbackSrc ? fallbackSrc : src;
 
   if (failed) {
     return (
@@ -33,10 +46,16 @@ export default function SmartImage({ src, alt, className = "", imgClassName = ""
 
   return (
     <img
-      src={src}
+      src={currentSrc}
       alt={alt}
       loading="lazy"
-      onError={() => setFailed(true)}
+      onError={() => {
+        if (fallbackSrc && !usingFallback) {
+          setUsingFallback(true);
+        } else {
+          setFailed(true);
+        }
+      }}
       className={`object-cover ${className} ${imgClassName}`}
     />
   );
