@@ -90,22 +90,22 @@ export default function CosmeticsDemo() {
   }
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden bg-[#FDF9F8] text-[#1A1617]">
+    <div className="@container relative flex h-full flex-col overflow-hidden bg-[#FDF9F8] text-[#1A1617]">
       <div className="min-h-0 flex-1 overflow-y-auto">
         {/* announcement bar */}
-        <div className="bg-[#1A1617] px-4 py-2 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#FDF9F8] sm:text-[11px]">
+        <div className="bg-[#1A1617] px-4 py-2 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-[#FDF9F8] @sm:text-[11px]">
           Envío a todo Ecuador · Pago contra entrega o transferencia · Edición Navidad 2026
         </div>
 
         {/* header */}
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-[#1A1617]/10 bg-[#FDF9F8]/95 px-4 py-3 backdrop-blur sm:px-6">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-[#1A1617]/10 bg-[#FDF9F8]/95 px-4 py-3 backdrop-blur @sm:px-6">
           <div>
             <p className="font-serif text-lg leading-none">Blush &amp; Bloom</p>
             <p className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-[#D8A499]">
               Cosméticos &amp; Skincare
             </p>
           </div>
-          <nav className="hidden items-center gap-5 text-xs uppercase tracking-[0.12em] text-[#1A1617]/60 lg:flex">
+          <nav className="hidden items-center gap-5 text-xs uppercase tracking-[0.12em] text-[#1A1617]/60 @lg:flex">
             <a href="#catalogo" className="transition-colors hover:text-[#1A1617]">Skincare</a>
             <a href="#catalogo" className="transition-colors hover:text-[#1A1617]">Maquillaje</a>
             <a href="#catalogo" className="transition-colors hover:text-[#1A1617]">Kits Regalo</a>
@@ -114,25 +114,25 @@ export default function CosmeticsDemo() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="inline-flex items-center gap-1.5 border border-[#1A1617] bg-[#FDF9F8] px-3 py-2 text-xs font-semibold transition-colors hover:bg-[#1A1617] hover:text-[#FDF9F8] sm:text-sm"
+            className="inline-flex items-center gap-1.5 border border-[#1A1617] bg-[#FDF9F8] px-3 py-2 text-xs font-semibold transition-colors hover:bg-[#1A1617] hover:text-[#FDF9F8] @sm:text-sm"
           >
             Carrito ({count})
           </button>
         </header>
         {/* split hero */}
-        <section className="grid lg:grid-cols-2">
-          <div className="flex flex-col justify-center gap-5 p-6 sm:p-10 lg:p-14">
+        <section className="grid @lg:grid-cols-2">
+          <div className="flex flex-col justify-center gap-5 p-6 @sm:p-10 @lg:p-14">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D8A499]">
               Skincare &amp; Maquillaje Original
             </p>
-            <h1 className="font-serif text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
+            <h1 className="font-serif text-3xl leading-tight text-balance @sm:text-4xl @lg:text-5xl">
               Tu rutina favorita, lista para brillar estas fiestas
             </h1>
             <p className="max-w-md text-sm leading-relaxed text-[#1A1617]/65">
               Productos dermatológicos, maquillaje de larga duración y sets de regalo con
               entrega rápida en Quito, Guayaquil y todo el país.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 @sm:flex-row">
               <a
                 href="#catalogo"
                 className="inline-flex items-center justify-center bg-[#1A1617] px-6 py-3.5 text-sm font-semibold text-[#FDF9F8] transition-colors hover:bg-[#D8A499] hover:text-[#1A1617]"
@@ -161,11 +161,11 @@ export default function CosmeticsDemo() {
         </section>
 
         {/* catalog */}
-        <section id="catalogo" className="px-4 py-12 sm:px-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <section id="catalogo" className="px-4 py-12 @sm:px-6">
+          <div className="flex flex-col gap-4 @sm:flex-row @sm:items-end @sm:justify-between">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#D8A499]">Catálogo</p>
-              <h2 className="mt-2 font-serif text-2xl sm:text-3xl">Nuestros favoritos</h2>
+              <h2 className="mt-2 font-serif text-2xl @sm:text-3xl">Nuestros favoritos</h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {CATEGORIES.map((c) => (
@@ -185,7 +185,7 @@ export default function CosmeticsDemo() {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-4 @sm:grid-cols-2 @lg:grid-cols-4">
             {visible.map((p) => (
               <article
                 key={p.id}
@@ -203,7 +203,7 @@ export default function CosmeticsDemo() {
                   <span className="inline-flex w-fit border border-[#D8A499]/50 bg-[#D8A499]/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9c635b]">
                     {p.tag}
                   </span>
-                  <h3 className="mt-2 text-sm font-medium leading-tight sm:text-base">{p.name}</h3>
+                  <h3 className="mt-2 text-sm font-medium leading-tight @sm:text-base">{p.name}</h3>
                   <p className="mt-1 text-xs text-[#1A1617]/55">{p.benefit}</p>
                   <div className="mt-2">
                     <Stars rating={p.rating} />

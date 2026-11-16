@@ -7,7 +7,7 @@ import WhatsAppFab from "./components/WhatsAppFab";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-cream text-ink">
+    <div className="min-h-[100dvh] bg-cream text-ink">
       <Header />
       <main>
         <Hero />

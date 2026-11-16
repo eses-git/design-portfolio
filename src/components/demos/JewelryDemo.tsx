@@ -105,37 +105,37 @@ export default function JewelryDemo() {
   const visible = filter === "Todos" ? PIECES : PIECES.filter((p) => p.category === filter);
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden bg-[#FAF8F5] text-[#141414]">
+    <div className="@container relative flex h-full flex-col overflow-hidden bg-[#FAF8F5] text-[#141414]">
       <div className="min-h-0 flex-1 overflow-y-auto">
         {/* header */}
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-[#141414]/10 bg-[#FAF8F5]/95 px-4 py-3 backdrop-blur sm:px-6">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-[#141414]/10 bg-[#FAF8F5]/95 px-4 py-3 backdrop-blur @sm:px-6">
           <div>
             <p className="font-serif text-lg leading-none tracking-wide">AUREA</p>
             <p className="mt-0.5 text-[10px] uppercase tracking-[0.3em] text-brass">Fine Jewelry</p>
           </div>
-          <nav className="hidden items-center gap-6 text-xs uppercase tracking-[0.16em] text-[#141414]/60 md:flex">
+          <nav className="hidden items-center gap-6 text-xs uppercase tracking-[0.16em] text-[#141414]/60 @md:flex">
             <a href="#coleccion" className="transition-colors hover:text-[#141414]">Colección</a>
             <a href="#amedida" className="transition-colors hover:text-[#141414]">A Medida</a>
             <a href="#contacto" className="transition-colors hover:text-[#141414]">Contacto</a>
           </nav>
-          <span className="hidden text-[10px] uppercase tracking-[0.24em] text-brass sm:block">
+          <span className="hidden text-[10px] uppercase tracking-[0.24em] text-brass @sm:block">
             Colección 2026
           </span>
         </header>
 
         {/* split hero */}
-        <section className="grid md:grid-cols-2">
-          <div className="flex flex-col justify-center gap-5 p-6 sm:p-10 lg:p-14">
+        <section className="grid @md:grid-cols-2">
+          <div className="flex flex-col justify-center gap-5 p-6 @sm:p-10 @lg:p-14">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
               Piezas de autor · Oro 18k &amp; Plata 925
             </p>
-            <h1 className="font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            <h1 className="font-serif text-3xl leading-tight @sm:text-4xl @lg:text-5xl">
               Piezas eternas hechas a mano
             </h1>
             <p className="max-w-md text-sm leading-relaxed text-[#141414]/65">
               Joyas exclusivas y diseños personalizados con envíos asegurados en todo Ecuador.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 @sm:flex-row">
               <a
                 href="#coleccion"
                 className="inline-flex items-center justify-center bg-[#141414] px-6 py-3.5 text-sm font-semibold text-[#FAF8F5] transition-colors hover:bg-brass hover:text-[#141414]"
@@ -163,7 +163,7 @@ export default function JewelryDemo() {
           </div>
         </section>
         {/* trust strip */}
-        <section className="grid grid-cols-1 gap-px border-y border-[#141414]/10 bg-[#141414]/10 sm:grid-cols-3">
+        <section className="grid grid-cols-1 gap-px border-y border-[#141414]/10 bg-[#141414]/10 @sm:grid-cols-3">
           {TRUST.map((t) => (
             <div key={t.title} className="flex items-center gap-3 bg-[#FAF8F5] px-5 py-4">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-[#141414]/20 text-[#141414]">
@@ -177,13 +177,13 @@ export default function JewelryDemo() {
         </section>
 
         {/* collection + filter + grid */}
-        <section id="coleccion" className="px-4 py-12 sm:px-6 lg:px-10">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <section id="coleccion" className="px-4 py-12 @sm:px-6 @lg:px-10">
+          <div className="flex flex-col gap-4 @sm:flex-row @sm:items-end @sm:justify-between">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brass">
                 Colección 2026
               </p>
-              <h2 className="mt-2 font-serif text-2xl sm:text-3xl">Piezas destacadas</h2>
+              <h2 className="mt-2 font-serif text-2xl @sm:text-3xl">Piezas destacadas</h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {FILTERS.map((f) => (
@@ -203,7 +203,7 @@ export default function JewelryDemo() {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-4 @lg:grid-cols-4">
             {visible.map((p) => (
               <article
                 key={p.id}
@@ -221,10 +221,10 @@ export default function JewelryDemo() {
                   <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brass">
                     {p.tag}
                   </span>
-                  <h3 className="mt-1 text-sm font-medium sm:text-base">{p.name}</h3>
+                  <h3 className="mt-1 text-sm font-medium @sm:text-base">{p.name}</h3>
                   <p className="mt-0.5 text-[11px] text-[#141414]/55">{p.material}</p>
                   <div className="mt-auto flex items-center justify-between gap-2 pt-3">
-                    <span className="font-serif text-base sm:text-lg">{p.price}</span>
+                    <span className="font-serif text-base @sm:text-lg">{p.price}</span>
                     <a
                       href={waLink(`Hola Aurea, me interesa: ${p.name}`)}
                       target="_blank"
@@ -241,14 +241,14 @@ export default function JewelryDemo() {
           </div>
         </section>
         {/* a medida */}
-        <section id="amedida" className="px-4 pb-12 sm:px-6 lg:px-10">
-          <div className="border border-[#141414] bg-[#141414] p-6 text-[#FAF8F5] sm:p-10">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <section id="amedida" className="px-4 pb-12 @sm:px-6 @lg:px-10">
+          <div className="border border-[#141414] bg-[#141414] p-6 text-[#FAF8F5] @sm:p-10">
+            <div className="flex flex-col gap-6 @sm:flex-row @sm:items-center @sm:justify-between">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brass">
                   A Medida
                 </p>
-                <h2 className="mt-2 font-serif text-2xl sm:text-3xl">Diseñamos tu joya soñada</h2>
+                <h2 className="mt-2 font-serif text-2xl @sm:text-3xl">Diseñamos tu joya soñada</h2>
                 <p className="mt-2 max-w-lg text-sm text-[#FAF8F5]/70">
                   Anillos de compromiso, obsequios corporativos o piezas únicas. Boceto,
                   aprobación y entrega en todo Ecuador.
@@ -268,8 +268,8 @@ export default function JewelryDemo() {
         </section>
 
         {/* footer */}
-        <footer id="contacto" className="border-t border-[#141414]/10 px-4 py-10 sm:px-6 lg:px-10">
-          <div className="grid gap-8 sm:grid-cols-3">
+        <footer id="contacto" className="border-t border-[#141414]/10 px-4 py-10 @sm:px-6 @lg:px-10">
+          <div className="grid gap-8 @sm:grid-cols-3">
             <div>
               <p className="font-serif text-lg tracking-wide">AUREA</p>
               <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-brass">Fine Jewelry</p>

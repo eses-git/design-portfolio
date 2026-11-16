@@ -65,15 +65,15 @@ export default function BeautySalonDemo() {
   }
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden bg-cream text-ink">
+    <div className="@container relative flex h-full flex-col overflow-hidden bg-cream text-ink">
       <div className="min-h-0 flex-1 overflow-y-auto">
         {/* nav */}
-        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-ink/10 bg-cream/95 px-4 py-3 backdrop-blur sm:px-6">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-ink/10 bg-cream/95 px-4 py-3 backdrop-blur @sm:px-6">
           <div>
             <p className="font-serif text-lg leading-none">Lunaria</p>
             <p className="mt-0.5 text-[10px] uppercase tracking-[0.24em] text-terracotta">Beauty &amp; Spa</p>
           </div>
-          <nav className="hidden items-center gap-5 text-sm text-ink/70 sm:flex">
+          <nav className="hidden items-center gap-5 text-sm text-ink/70 @sm:flex">
             <a href="#servicios" className="hover:text-ink">Servicios</a>
             <a href="#galeria" className="hover:text-ink">Galería</a>
             <a href="#contacto" className="hover:text-ink">Contacto</a>
@@ -82,7 +82,7 @@ export default function BeautySalonDemo() {
             href={waLink("Hola Lunaria, quiero reservar una cita")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 bg-ink px-3 py-2 text-xs font-semibold text-cream transition-colors hover:bg-terracotta sm:px-4"
+            className="inline-flex items-center gap-1.5 bg-ink px-3 py-2 text-xs font-semibold text-cream transition-colors hover:bg-terracotta @sm:px-4"
           >
             <WhatsAppIcon className="h-3.5 w-3.5" />
             Reservar
@@ -90,17 +90,17 @@ export default function BeautySalonDemo() {
         </header>
 
         {/* hero */}
-        <section className="relative h-72 overflow-hidden sm:h-[26rem]">
+        <section className="relative h-72 overflow-hidden @sm:h-[26rem]">
           <SmartImage src={HERO_IMG} alt="Salón de belleza premium" className="h-full w-full" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
+          <div className="absolute inset-0 flex flex-col justify-end p-6 @sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cream/80">
               Salón &amp; Spa · Quito
             </p>
-            <h1 className="mt-3 max-w-xl text-3xl leading-tight text-balance text-cream sm:text-5xl">
+            <h1 className="mt-3 max-w-xl text-3xl leading-tight text-balance text-cream @sm:text-5xl">
               Belleza que realza tu mejor versión
             </h1>
-            <p className="mt-3 max-w-md text-sm text-cream/80 sm:text-base">
+            <p className="mt-3 max-w-md text-sm text-cream/80 @sm:text-base">
               Cortes, color, uñas y rituales de spa. Reservá en segundos por WhatsApp.
             </p>
             <a
@@ -115,16 +115,16 @@ export default function BeautySalonDemo() {
           </div>
         </section>
         {/* gallery */}
-        <section id="galeria" className="px-4 py-10 sm:px-6">
+        <section id="galeria" className="px-4 py-10 @sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">Galería</p>
-          <h2 className="mt-2 text-2xl sm:text-3xl">Nuestro trabajo</h2>
-          <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <h2 className="mt-2 text-2xl @sm:text-3xl">Nuestro trabajo</h2>
+          <div className="mt-6 grid grid-cols-2 gap-2 @sm:grid-cols-3">
             {GALLERY.map((g) => (
               <div key={g.label} className="group relative overflow-hidden border border-ink/10">
                 <SmartImage
                   src={g.img}
                   alt={g.label}
-                  className="h-32 w-full transition-transform duration-500 group-hover:scale-105 sm:h-44"
+                  className="h-32 w-full transition-transform duration-500 group-hover:scale-105 @sm:h-44"
                 />
                 <span className="absolute bottom-2 left-2 bg-ink/70 px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-cream">
                   {g.label}
@@ -135,9 +135,9 @@ export default function BeautySalonDemo() {
         </section>
 
         {/* services */}
-        <section id="servicios" className="px-4 pb-10 sm:px-6">
+        <section id="servicios" className="px-4 pb-10 @sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">Menú</p>
-          <h2 className="mt-2 text-2xl sm:text-3xl">Servicios &amp; precios</h2>
+          <h2 className="mt-2 text-2xl @sm:text-3xl">Servicios &amp; precios</h2>
 
           <div className="mt-5 flex flex-wrap gap-2">
             {CATEGORIES.map((c) => (
@@ -156,14 +156,14 @@ export default function BeautySalonDemo() {
             ))}
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 @sm:grid-cols-2">
             {filtered.map((s) => (
               <article
                 key={s.id}
                 className="flex flex-col border border-ink/15 bg-cream transition-all duration-300 hover:-translate-y-0.5 hover:shadow-editorial"
               >
                 <div className="overflow-hidden">
-                  <SmartImage src={s.img} alt={s.name} className="h-36 w-full sm:h-44" />
+                  <SmartImage src={s.img} alt={s.name} className="h-36 w-full @sm:h-44" />
                 </div>
                 <div className="flex flex-1 flex-col p-4">
                   <p className="text-[11px] font-semibold uppercase tracking-wide text-terracotta">{s.cat}</p>
@@ -189,8 +189,8 @@ export default function BeautySalonDemo() {
         </section>
 
         {/* booking */}
-        <section className="px-4 pb-8 sm:px-6">
-          <div className="border border-ink bg-blush/40 p-5 sm:p-6">
+        <section className="px-4 pb-8 @sm:px-6">
+          <div className="border border-ink bg-blush/40 p-5 @sm:p-6">
             <h3 className="text-xl">Reservá tu turno</h3>
 
             {confirmed && selected && slot ? (
@@ -219,7 +219,7 @@ export default function BeautySalonDemo() {
                   )}
                 </p>
 
-                <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6">
+                <div className="mt-4 grid grid-cols-3 gap-2 @sm:grid-cols-6">
                   {SLOTS.map((s) => (
                     <button
                       key={s}
@@ -250,8 +250,8 @@ export default function BeautySalonDemo() {
         </section>
 
         {/* footer */}
-        <footer id="contacto" className="border-t border-ink/10 bg-blush/40 px-4 py-8 sm:px-6">
-          <div className="grid gap-6 sm:grid-cols-3">
+        <footer id="contacto" className="border-t border-ink/10 bg-blush/40 px-4 py-8 @sm:px-6">
+          <div className="grid gap-6 @sm:grid-cols-3">
             <div>
               <p className="font-serif text-lg">Lunaria</p>
               <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-terracotta">Beauty &amp; Spa</p>

@@ -27,7 +27,7 @@ function PhoneFrame({ children }: { children: ReactNode }) {
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="flex h-[min(80vh,760px)] w-[300px] flex-col border-[10px] border-[#1a1a1a] bg-[#1a1a1a] sm:w-[350px]"
+      className="relative flex h-[812px] max-h-full w-[375px] max-w-full flex-col overflow-hidden isolate origin-top [transform:translateZ(0)] border-[10px] border-[#1a1a1a] bg-[#1a1a1a]"
     >
       {/* status bar + notch */}
       <div className="relative flex items-center justify-between bg-[#1a1a1a] px-4 pb-2 pt-1 text-[10px] font-medium text-cream/70">
@@ -47,7 +47,7 @@ function DesktopFrame({ children }: { children: ReactNode }) {
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="flex h-full max-h-[82vh] w-full max-w-6xl flex-col border border-cream/15 bg-[#121110]"
+      className="relative flex h-full max-h-[82dvh] w-full max-w-6xl flex-col overflow-hidden isolate border border-cream/15 bg-[#121110]"
     >
       <div className="flex items-center gap-2 border-b border-cream/15 bg-[#1c1a18] px-4 py-2.5">
         <span className="h-3 w-3 bg-terracotta" />
@@ -149,7 +149,7 @@ export default function DemoViewer({ demo, initialView = "mobile", onClose }: De
       </div>
 
       {/* body */}
-      <div className="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-4 sm:p-6">
+      <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden isolate p-4 sm:p-6">
         {device === "mobile" ? (
           <PhoneFrame>{renderDemo(demo.id)}</PhoneFrame>
         ) : (
